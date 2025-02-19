@@ -11,6 +11,6 @@
   "author": "arlojay",
   "license": "MIT",
   "dependencies": {
-    "cosmic-reach-dag": "file:../../utils/cosmic-reach/cosmic-reach-dynamic-asset-generator"
+    "cosmic-reach-dag": "^1.0.0"
   }
 }

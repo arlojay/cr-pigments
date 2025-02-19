@@ -89,5 +89,5 @@ async function main() {
 
 
     const writer = new Writer(mod);
-    writer.write("C:/Users/arlov/AppData/Local/cosmic-reach/mods");
+    writer.write("./output/");
 }
