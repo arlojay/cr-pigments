@@ -1,8 +1,8 @@
 # cr-pigments
-Adds pigments of all colors (including grayscale) with recipes
+Adds pigments of all colors (including grayscale) with recipes to [Cosmic Reach](https://finalforeach.itch.io/cosmic-reach/)
 CRMM Link: https://crmm.tech/datamod/pigments
 
-## Adds pigments of all native Cosmic Reach types.
+## Adds pigments of all native Cosmic Reach types
 (Also adds black, gray, and white pigments)
 
 Black pigment can be crafted by smelting asphalt or crafting rubber balls.
