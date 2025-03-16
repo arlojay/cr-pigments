@@ -17,6 +17,8 @@ async function main() {
         pigmentItem.createLangKey().addTranslation(formatId(color.name, true) + " Pigment", LangKeyLanguage.en_us);
 
         pigmentItem.texture = await pigmentTexture.createTexture(pigmentItem.id.getItem(), color.srgb.r, color.srgb.g, color.srgb.b);
+        pigmentItem.tags.push("pigments:pigment");
+        pigmentItem.tags.push("pigments:color/" + color);
 
         if(!additionalColors.includes(color)) {
             for(const power of ["off", "on"]) pigmentSmeltingRecipes.createRecipe(
@@ -102,5 +104,5 @@ async function main() {
 
 
     const writer = new Writer(mod);
-    writer.write("./output/");
+    writer.write(process.env.LOCALAPPDATA + "/cosmic-reach/mods/");
 }
