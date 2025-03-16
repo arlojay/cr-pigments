@@ -10,7 +10,7 @@ async function main() {
     const pigmentSmeltingRecipes = mod.createFurnaceRecipe("pigment_smelting");
     const colors = {};
 
-    const additionalColors = [ new Color("black", 0, 0, 0), new Color("gray", 7, 7, 7) ];
+    const additionalColors = [ new Color("black", 0, 0, 0), new Color("gray", 7, 7, 7), new Color("dark_gray", 3, 3, 3), new Color("light_gray", 12, 12, 12) ];
 
     for await(const color of [...Colors.crColors, ...additionalColors]) {
         const pigmentItem = mod.createItem(color + "_pigment");
@@ -77,8 +77,23 @@ async function main() {
     rose.addItem(colors.magenta, 1); rose.addItem(colors.red, 1);
 
     // Grays
-    const gray = mod.createCraftingRecipe("gray_pigment").createShapeless(colors.gray, 2);
-    gray.addItem(colors.black, 1); gray.addItem(colors.white, 1);
+    const gray = mod.createCraftingRecipe("gray_pigment");
+    const grayA = gray.createShapeless(colors.gray, 2);
+    grayA.addItem(colors.black, 1); grayA.addItem(colors.white, 1);
+    const grayB = gray.createShapeless(colors.gray, 2);
+    grayB.addItem(colors.dark_gray, 1); grayB.addItem(colors.light_gray, 1);
+    
+    const darkGray = mod.createCraftingRecipe("dark_gray_pigment");
+    const darkGrayA = darkGray.createShapeless(colors.dark_gray, 2);
+    darkGrayA.addItem(colors.black, 1); darkGrayA.addItem(colors.gray, 1);
+    const darkGrayB = darkGray.createShapeless(colors.dark_gray, 2);
+    darkGrayB.addItem(colors.black, 1); darkGrayB.addItem(colors.light_gray, 1);
+    
+    const lightGray = mod.createCraftingRecipe("light_gray_pigment");
+    const lightGrayA = lightGray.createShapeless(colors.light_gray, 2);
+    lightGrayA.addItem(colors.white, 1); lightGrayA.addItem(colors.gray, 1);
+    const lightGrayB = lightGray.createShapeless(colors.light_gray, 2);
+    lightGrayB.addItem(colors.white, 1); lightGrayB.addItem(colors.dark_gray, 1);
 
 
     mod.createFurnaceRecipe("white_pigment").createRecipe("base:stone_limestone[default]", colors.white);
