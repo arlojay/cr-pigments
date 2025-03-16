@@ -96,8 +96,6 @@ async function main() {
     lightGrayB.addItem(colors.white, 1); lightGrayB.addItem(colors.dark_gray, 1);
 
 
-    mod.createFurnaceRecipe("white_pigment").createRecipe("base:stone_limestone[default]", colors.white);
-    mod.createFurnaceRecipe("black_pigment").createRecipe("base:asphalt[default]", colors.black);
     mod.createCraftingRecipe("white_pigment").createShapeless(colors.white, 1).addItem("base:latex", 1);
     mod.createCraftingRecipe("black_pigment").createShapeless(colors.black, 1).addItem("base:rubber_ball", 1);
 
